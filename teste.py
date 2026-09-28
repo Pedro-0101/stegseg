@@ -1,4 +1,8 @@
 import argparse
+from PIL import Image
+
+
+print("Pillow funcionando!")
 
 if __name__ == "__main__":
     
@@ -12,12 +16,19 @@ if __name__ == "__main__":
 
     operation = args.operation
     imagem = args.imagem
+    mensagem = args.mensagem
+    output = args.output
 
-    if operation == "hide":
-        print("Esconder")
-    elif operation == "read":
-        print("Ler")
-    else:
-        print("Operação inválida ou não informada. Use --operation hide ou --operation read")
+    if operation == "":
+        operation = "hide"
+
+    if mensagem == "":
+        mensagem = "Mensagem padrao"
+
+    if output == "":
+        output = "./"
+
+
+    print(operation + " mensagem " + mensagem + " na imagem " + imagem + " e salvando o resultado em " + output)
 
     print(args)
