@@ -14,7 +14,7 @@ def esconder_mensagem(imagem_add, mensagem, output):
 
     for m in mensagem_bin:
         r, g, b, a = pixels[posx, posy]
-        r_alt = (r & ~1) | int(m)
+        r_alt = int(bin(r)[:-1] + m, 2)
         pixels[posx, posy] = (r_alt, g, b, a)
 
         posx += 1
@@ -47,7 +47,7 @@ def ler_mensagem(imagem_add):
 
     while True:
         r, _, _, _ = pixels[posx, posy]
-        mensagem_bin += str(r & 1)
+        mensagem_bin += bin(r)[-1]
 
         if len(mensagem_bin) == 8:
             byte = int(mensagem_bin, 2)

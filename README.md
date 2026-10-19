@@ -1,5 +1,9 @@
 # stegseg
 
+Integrantes do grupo:
+Pedro Paulino Pinto
+Victoria Benfica
+
 esconde mensagem dentro de imagem (esteganografia). grava os bits da mensagem no último bit do vermelho de cada pixel. simples assim.
 
 precisa de python 3 e do pillow.
